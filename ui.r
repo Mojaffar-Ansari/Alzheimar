@@ -67,7 +67,9 @@ ui <-fluidPage(theme = shinytheme("cerulean"), #superhero
                      tabPanel("Dataset1",  DT::dataTableOutput('contents1')),
                      tabPanel("Dataset2",  DT::dataTableOutput('contents2')),
                      tabPanel("Output for file 1", DT::dataTableOutput('contents3')),
-                     tabPanel("output for file 2", DT::dataTableOutput('contents4'))
+                     tabPanel("output for file 2", DT::dataTableOutput('contents4')),
+                     tabPanel("Log2 value of normalized file 1", DT::dataTableOutput(('log2_value1'))),
+                     tabPanel("Log2 value of normalized file 1", DT::dataTableOutput(('log2_value2')))
                   )
                )
 )

@@ -101,7 +101,6 @@ server <- function(input, output, session) {
   })
   #)
   
-  
   observeEvent(c(input$preprocess,input$normalize), {
     
     
@@ -151,15 +150,20 @@ server <- function(input, output, session) {
       res1 = rma(mat1)
       res2 = rma(mat2)
     }
-    
-    
-    
+    log2_val1 <- log2(res1)
+    log2_val2 <- log2(res2)
     #normalizeQuantiles
     output$contents3 <- DT::renderDataTable({
       DT::datatable(res1, class = 'cell-border stripe', options = list(pageLength = 10, scrollY=FALSE, scrollX=TRUE, paging=TRUE)) 
     })
     output$contents4 <- DT::renderDataTable({
       DT::datatable(res2, class = 'cell-border stripe', options = list(pageLength = 10, scrollY=FALSE, scrollX=TRUE, paging=TRUE)) 
+    })
+    output$log2_value1 <- DT::renderDataTable({
+      DT::datatable(log2_val1,class = 'cell-border stripe',options = list(pageLength = 10,scrollY = F,scrollX = T,paging = T))
+    })
+    output$log2_value2 <- DT::renderDataTable({
+      DT::datatable(log2_val2,class = 'cell-border stripe',options = list(pageLength = 10,scrollY = F,scrollX = T,paging = T))
     })
   })
 }
