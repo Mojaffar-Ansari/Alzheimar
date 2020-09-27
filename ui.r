@@ -51,14 +51,15 @@ ui <-fluidPage(theme = shinytheme("cerulean"), #superhero
                             #splitLayout(cellWidths = c("75%", "25%"),
                             selectInput(inputId = "normalize",
                                         label = "Normalization",
-                                        choices = c("Quantile", "Loess", "CyclicLoess","qspline", "RMA", "MASS5", "GCRMA")),
+                                        choices 
+                                        = c("Quantile", "Loess", "CyclicLoess","qspline", "RMA", "MASS5", "GCRMA")),
                             splitLayout(cellWidths = c("50%", "50%"),
                                         checkboxInput('header', 'Header', TRUE),
                                         checkboxInput('log2', 'Log2', TRUE)
                             ),
                             
                             actionButton("preprocess", "Preprocess"),
-                            actionButton("next", "Next"),
+                            actionButton("next1", "Next"),
                             p("Click the Next button for further processing...")
                             
                ),
@@ -69,7 +70,8 @@ ui <-fluidPage(theme = shinytheme("cerulean"), #superhero
                      tabPanel("Output for file 1", DT::dataTableOutput('contents3')),
                      tabPanel("output for file 2", DT::dataTableOutput('contents4')),
                      tabPanel("Log2 value of normalized file 1", DT::dataTableOutput(('log2_value1'))),
-                     tabPanel("Log2 value of normalized file 1", DT::dataTableOutput(('log2_value2')))
+                     tabPanel("Log2 value of normalized file 1", DT::dataTableOutput(('log2_value2'))),
+                     tabPanel("Differential gene expression process",uiOutput('page1'))
                   )
                )
 )
