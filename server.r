@@ -47,6 +47,7 @@ if(!require("samr",character.only = T)){
 
 #shinyServer(function(input, output,session) {
 options(shiny.maxRequestSize=30*1024^2)
+
 server <- function(input, output, session) {
   #output$contents <- DT::renderDataTable({
   
@@ -197,6 +198,7 @@ observeEvent(input$next1,{
 observeEvent(c(input$process,input$diff),{
     
    if(input$diff == "SAM"){
+    
     file_1 <- input$file1
     file_2 <- input$file2
     if(is.null(file_1))
