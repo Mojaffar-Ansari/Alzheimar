@@ -193,16 +193,10 @@ observeEvent(input$next1,{
     )
   })
 })
-<<<<<<< HEAD
+
 observeEvent(c(input$process,input$diff),{
     
    if(input$diff == "SAM"){
-=======
-observeEvent(c(input$preprocess,input$diff),{
-    
-   # if(input$diff == "SAM"){
->>>>>>> 4c8e8b94bbb7bb24faeca106bbe4f8221f9aa20b
-    
     file_1 <- input$file1
     file_2 <- input$file2
     if(is.null(file_1))
@@ -237,8 +231,7 @@ observeEvent(c(input$preprocess,input$diff),{
     save(ctrl_acute_deg_rowID,file = "E:/NEW HIV conf/ctrl_acute_deg_rowID")
     save(ctrl_acute_deg_rowID,file = "E:/NEW HIV conf/ctrl_acute_deg_rowID.RData")
     savehistory("E:/New HIV conf/work/his_ctrl_acute.txt")
-    
-<<<<<<< HEAD
+
     #volcano plot
     
     delta1 <- 0.55
@@ -341,9 +334,8 @@ observeEvent(c(input$preprocess,input$diff),{
     volc2
     savehistory("E:/New HIV conf/SAM DEG/hist1.txt")
     } #if finished
-=======
+
     #} #if finished
->>>>>>> 4c8e8b94bbb7bb24faeca106bbe4f8221f9aa20b
   }
 ) #observeEvent finished
 } #function finished
